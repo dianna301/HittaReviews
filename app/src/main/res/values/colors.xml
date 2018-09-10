@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="dark_jungle_green">#333333</color>
+    <color name="manatee">#9B9B9B</color>
+    <color name="azure">#039BEF</color>
+    <color name="usc_gold">#FECD01</color>
+    <color name="pastel_grey">#CCCCCC</color>
+    <color name="blue_france">#34AFF4</color>
+    <color name="taupe_gray">#8C8C8C</color>
+</resources>

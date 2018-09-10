@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">HittaReviews</string>
+    <string name="reviews">Reviews</string>
+    <string name="from_ratings">from 27 ratings</string>
+    <string name="view_all_reviews">View all reviews</string>
+    <string name="rate_and_review">Rate and review</string>
+    <string name="share_your_experience_to_help_others">Share your experience to help others</string>
+    <string name="latest_reviews">Latest reviews</string>
+    <string name="your_name">Your name</string>
+    <string name="add_more_details_on_your_experience">Add more details on your experience…</string>
+    <string name="describe_your_experience">Describe your experience</string>
+    <string name="thank_you_for_review">Thank you for your review</string>
+    <string name="you_are_helping_others">You\’re helping others make smarter decisions every day</string>
+    <string name="okay">Okay\!</string>
+    <string name="anonymous">Anonymous</string>
+
+    <string name="rating_status_1">I hated it</string>
+    <string name="rating_status_2">I didn\'t it</string>
+    <string name="rating_status_3">It was OK</string>
+    <string name="rating_status_4">I liked it</string>
+    <string name="rating_status_5">I loved it</string>
+</resources>

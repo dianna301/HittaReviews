@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".activity.ReviewsActivity">
+
+        <TextView
+            android:id="@+id/reviewsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/reviews_title_margin_top"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/reviews"
+            android:textColor="@color/dark_jungle_green"
+            android:textSize="@dimen/reviews_title_text_size"
+            app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ratingImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/rating_img_margin_top"
+            app:layout_constraintEnd_toStartOf="@+id/fromRatingTv"
+            app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/reviewsTv"
+            app:srcCompat="@drawable/rectangle" />
+
+        <TextView
+            android:id="@+id/fromRatingTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/rating_margin_top"
+            android:layout_marginStart="@dimen/rating_margin_start"
+            android:layout_marginTop="@dimen/rating_margin_top"
+            android:fontFamily="@font/roboto"
+            android:text="@string/from_ratings"
+            android:textColor="@color/manatee"
+            android:textSize="@dimen/info_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/ratingImg"
+            app:layout_constraintStart_toEndOf="@+id/ratingImg"
+            app:layout_constraintTop_toTopOf="@+id/ratingImg" />
+
+        <TextView
+            android:id="@+id/allReviewsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/rating_margin_top"
+            android:layout_marginTop="@dimen/rating_margin_top"
+            android:fontFamily="@font/roboto"
+            android:gravity="end"
+            android:text="@string/view_all_reviews"
+            android:textColor="@color/azure"
+            android:textSize="@dimen/description_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/ratingImg"
+            app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+            app:layout_constraintTop_toTopOf="@+id/ratingImg" />
+
+        <TextView
+            android:id="@+id/ratingTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/rating_margin_top"
+            android:layout_marginEnd="@dimen/rating_margin_top"
+            android:layout_marginStart="@dimen/rating_margin_top"
+            android:layout_marginTop="@dimen/rating_margin_top"
+            android:fontFamily="@font/roboto_bold"
+            android:text="4.1"
+            android:textColor="#4A4A4A"
+            android:textSize="@dimen/description_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/ratingImg"
+            app:layout_constraintEnd_toEndOf="@+id/ratingImg"
+            app:layout_constraintStart_toStartOf="@+id/ratingImg"
+            app:layout_constraintTop_toTopOf="@+id/ratingImg" />
+
+        <ImageView
+            android:id="@+id/lineViewBottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+            app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="@+id/rateFrameLayout"
+            app:srcCompat="@drawable/line" />
+
+        <FrameLayout
+            android:id="@+id/rateFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/rating_margin_start"
+            android:layout_marginStart="@dimen/rating_margin_start"
+            android:layout_marginTop="@dimen/rating_margin_start"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/ratingImg">
+
+            <include
+                android:id="@+id/rateReviewLayout"
+                layout="@layout/rate_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/anonymReviewLayout"
+                layout="@layout/review_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/latestReviewsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/rating_margin_start"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/latest_reviews"
+            android:textColor="@color/dark_jungle_green"
+            android:textSize="@dimen/description_text_size"
+            app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/rateFrameLayout" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/reviewsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/rating_margin_start"
+            android:layout_marginStart="@dimen/rating_margin_start"
+            android:layout_marginTop="@dimen/rating_margin_start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/latestReviewsTv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/all_reviews_text_margin_top"
+            android:layout_marginTop="@dimen/all_reviews_text_margin_top"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/view_all_reviews"
+            android:textColor="@color/azure"
+            android:textSize="@dimen/description_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/reviewsRecycler" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/guideline_margin" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/guideline_margin" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

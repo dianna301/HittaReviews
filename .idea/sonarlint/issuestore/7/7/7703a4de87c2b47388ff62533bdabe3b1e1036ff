@@ -1,0 +1,6 @@
+
+Ksquid:S1068"*Remove this unused "rating" private field.(“×üÊüÿÿÿÿ8–ß€ÖÚ,
+vsquid:S1450"URemove the "rating" field and declare it as a local variable in the relevant methods.(“×üÊüÿÿÿÿ8–ß€ÖÚ,
+osquid:UselessImportCheck"FRemove this unused import 'com.hittareviews.activity.ReviewsActivity'.(‰š¼Ÿ8–ß€ÖÚ,
+[squid:UselessImportCheck"3Remove this unused import 'android.content.Intent'.(³ğ‹G8–ß€ÖÚ,
+vsquid:UselessImportCheck"HRemove this unused import 'com.hittareviews.activity.AddReviewActivity'.(¥ì”ûÿÿÿÿ8–ß€ÖÚ,
