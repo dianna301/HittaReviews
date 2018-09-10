@@ -19,4 +19,9 @@
     <string name="rating_status_3">It was OK</string>
     <string name="rating_status_4">I liked it</string>
     <string name="rating_status_5">I loved it</string>
+    <string name="save_review">Save review?</string>
+    <string name="save_string">Save</string>
+    <string name="do_not_save">Do not save</string>
+    <string name="cancel">Cancel</string>
+    <string name="problem_while_saving">There was a problem while saving</string>
 </resources>

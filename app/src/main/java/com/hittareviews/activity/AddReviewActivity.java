@@ -48,7 +48,7 @@ public class AddReviewActivity extends AppCompatActivity {
         setDataFromBundle();
 
         ratingBar.setOnRatingBarChangeListener((ratingBar, rating, fromUser) ->
-            setRatingStatus((int) rating));
+                setRatingStatus((int) rating));
     }
 
     private void setActionBarViews() {
@@ -109,7 +109,7 @@ public class AddReviewActivity extends AppCompatActivity {
     private void saveReview() {
         RequestData.getInstance(AddReviewActivity.this).saveReview(nameEditText.getText().toString().trim(), reviewEditText.getText().toString(), ratingBar.getRating(),
                 response -> showSaveDialog(),
-                error -> {});
+                error -> showErrorDialog());
     }
 
     private void showSaveDialog() {
@@ -124,18 +124,28 @@ public class AddReviewActivity extends AppCompatActivity {
 
     private void showExitDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("Save review?")
-                .setPositiveButton("Save", (dialog, which) -> {
+                .setTitle(R.string.save_review)
+                .setPositiveButton(R.string.save_string, (dialog, which) -> {
                     saveInfo = true;
                     onBackPressed();
                 })
-                .setNegativeButton("Do not save", (dialog, which) -> {
+                .setNegativeButton(R.string.do_not_save, (dialog, which) -> {
                     saveInfo = false;
                     onBackPressed();
                 })
-                .setNeutralButton("Cancel", (dialog, which) -> {
+                .setNeutralButton(R.string.cancel, (dialog, which) -> {
                     // dialog is dismissed
                 })
+                .show();
+    }
+
+    private void showErrorDialog() {
+        new AlertDialog.Builder(this)
+                .setMessage(R.string.problem_while_saving)
+                .setNeutralButton(R.string.cancel, (dialog, which) -> {
+                    // dialog is dismissed
+                })
+                .setPositiveButton("Try again", (dialog, which) -> saveReview())
                 .show();
     }
 

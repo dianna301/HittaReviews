@@ -8,11 +8,11 @@
     <dimen name="status_text_size">19sp</dimen>
     <dimen name="status_edit_text_size">23sp</dimen> -->
     <dimen name="ratingBarHeight">47dp</dimen>
-    <dimen name="reviews_title_text_size">22sp</dimen>
-    <dimen name="info_text_size">15sp</dimen>
-    <dimen name="description_text_size">17sp</dimen>
-    <dimen name="status_text_size">16sp</dimen>
-    <dimen name="status_edit_text_size">19sp</dimen>
+    <dimen name="reviews_title_text_size">20sp</dimen>
+    <dimen name="info_text_size">13sp</dimen>
+    <dimen name="description_text_size">15sp</dimen>
+    <dimen name="status_text_size">14sp</dimen>
+    <dimen name="status_edit_text_size">17sp</dimen>
     <dimen name="reviews_title_margin_top">34dp</dimen>
     <dimen name="rating_img_margin_top">28dp</dimen>
     <dimen name="rating_margin_top">8dp</dimen>
