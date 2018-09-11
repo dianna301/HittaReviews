@@ -39,6 +39,9 @@ public class AddReviewActivity extends AppCompatActivity {
 
     private boolean saveInfo;
 
+    private String name;
+    private String description;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,8 +68,6 @@ public class AddReviewActivity extends AppCompatActivity {
     private void setDataFromBundle() {
         Bundle extras = getIntent().getExtras();
         float rating = 0;
-        String name = "";
-        String description = "";
         if (extras != null) {
             rating = extras.getFloat(RATING_STARS);
             name = extras.getString(RATING_NAME);
@@ -92,10 +93,10 @@ public class AddReviewActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                if (TextUtils.isEmpty(nameEditText.getText().toString()) && TextUtils.isEmpty(reviewEditText.getText().toString())) {
-                    onBackPressed();
-                } else {
+                if (shouldShowExitDialog()) {
                     showExitDialog();
+                } else {
+                    onBackPressed();
                 }
                 return true;
             case R.id.save_menu_item:
@@ -104,6 +105,12 @@ public class AddReviewActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private boolean shouldShowExitDialog() {
+        String nameValue = nameEditText.getText().toString();
+        String reviewValue = reviewEditText.getText().toString();
+        return (!TextUtils.isEmpty(nameValue) || !TextUtils.isEmpty(reviewValue)) && (!nameValue.equals(name) || !description.equals(reviewValue));
     }
 
     private void saveReview() {

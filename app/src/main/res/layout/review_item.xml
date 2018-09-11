@@ -5,13 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <TextView
+        android:id="@+id/reviewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/review_img_margin_top"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/your_review"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/description_text_size"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/itemImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/review_img_margin_top"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reviewTitle"
         app:srcCompat="@drawable/ic_person" />
 
     <TextView
@@ -60,22 +73,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/starsLayout"
         app:layout_constraintTop_toBottomOf="@+id/starsLayout">
+
         <TextView
             android:id="@+id/itemReview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/rating_margin_start"
+            android:layout_marginTop="@dimen/review_desc_margin_top"
             android:fontFamily="@font/roboto"
-            tools:text="Liked it very much - probably one of the best thai restaurants in the city - recommend!"
             android:textColor="@color/dark_jungle_green"
-            android:textSize="@dimen/description_text_size"/>
+            android:textSize="@dimen/description_text_size"
+            tools:text="Liked it very much - probably one of the best thai restaurants in the city - recommend!" />
 
         <TextView
             android:id="@+id/itemExperience"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/describe_your_experience"
-            android:layout_marginTop="@dimen/rating_margin_start"
+            android:layout_marginTop="@dimen/review_desc_margin_top"
             android:fontFamily="@font/roboto"
             android:textColor="@color/azure"
             android:textSize="@dimen/description_text_size"

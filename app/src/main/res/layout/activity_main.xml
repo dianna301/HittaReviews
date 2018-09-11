@@ -41,9 +41,7 @@
             android:id="@+id/fromRatingTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/rating_margin_top"
             android:layout_marginStart="@dimen/rating_margin_start"
-            android:layout_marginTop="@dimen/rating_margin_top"
             android:fontFamily="@font/roboto"
             android:text="@string/from_ratings"
             android:textColor="@color/manatee"
@@ -56,8 +54,6 @@
             android:id="@+id/allReviewsTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/rating_margin_top"
-            android:layout_marginTop="@dimen/rating_margin_top"
             android:fontFamily="@font/roboto"
             android:gravity="end"
             android:text="@string/view_all_reviews"
@@ -83,15 +79,6 @@
             app:layout_constraintEnd_toEndOf="@+id/ratingImg"
             app:layout_constraintStart_toStartOf="@+id/ratingImg"
             app:layout_constraintTop_toTopOf="@+id/ratingImg" />
-
-        <ImageView
-            android:id="@+id/lineViewBottom"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/guidelineRight"
-            app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-            app:layout_constraintTop_toTopOf="@+id/rateFrameLayout"
-            app:srcCompat="@drawable/line" />
 
         <FrameLayout
             android:id="@+id/rateFrameLayout"
@@ -133,8 +120,8 @@
             android:id="@+id/reviewsRecycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/rating_margin_start"
-            android:layout_marginStart="@dimen/rating_margin_start"
+            android:layout_marginEnd="@dimen/guideline_margin"
+            android:layout_marginStart="@dimen/guideline_margin"
             android:layout_marginTop="@dimen/rating_margin_start"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

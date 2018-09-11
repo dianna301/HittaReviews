@@ -42,6 +42,8 @@ public class ReviewsActivity extends AppCompatActivity {
     @BindView(R.id.anonymReviewLayout)
     ConstraintLayout anonymReviewLayout;
 
+    @BindView(R.id.reviewTitle)
+    TextView reviewTitle;
     @BindView(R.id.itemName)
     TextView reviewName;
     @BindView(R.id.itemReview)
@@ -112,7 +114,7 @@ public class ReviewsActivity extends AppCompatActivity {
                 String name = extras.getString(RATING_NAME);
                 String description = extras.getString(RATING_DESCRIPTION);
                 float starsRating = extras.getFloat(RATING_STARS);
-
+                reviewTitle.setVisibility(View.VISIBLE);
                 starsLayout.setRating(starsRating);
 
                 if (saveInfo) {
@@ -126,7 +128,7 @@ public class ReviewsActivity extends AppCompatActivity {
             }
             setReviewDate();
             reviewExperience.setOnClickListener(v ->
-                    gotoAddReviewActivity(ratingValue));
+                    gotoAddReviewActivity(starsLayout.getRating()));
 
         }
     }

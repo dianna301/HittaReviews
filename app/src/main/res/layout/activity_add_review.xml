@@ -34,7 +34,7 @@
         android:id="@+id/lineView1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/rating_margin_start"
+        android:layout_marginTop="@dimen/add_line_margin_top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/statusTv"

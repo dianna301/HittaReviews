@@ -1,9 +1,6 @@
 package com.hittareviews.viewmodel;
 
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.LayerDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -46,6 +43,10 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ReviewVi
             holder.reviewDesc.setText(review.getDescription());
             holder.reviewDate.setText(review.getDate());
             holder.ratingBar.setRating(review.getRating());
+            // hide the bottom line for the last item from list
+            if (position == reviewsList.size() - 1) {
+                holder.lineBottom.setVisibility(View.GONE);
+            }
         }
 
     }
@@ -67,6 +68,8 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ReviewVi
         ImageView image;
         @BindView(R.id.starsLayout)
         RatingBar ratingBar;
+        @BindView(R.id.lineViewBottom)
+        ImageView lineBottom;
 
 
         ReviewViewHolder(View view) {

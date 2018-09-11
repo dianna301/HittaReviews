@@ -24,4 +24,5 @@
     <string name="do_not_save">Do not save</string>
     <string name="cancel">Cancel</string>
     <string name="problem_while_saving">There was a problem while saving</string>
+    <string name="your_review">Your review</string>
 </resources>
