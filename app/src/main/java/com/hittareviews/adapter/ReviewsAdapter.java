@@ -1,4 +1,4 @@
-package com.hittareviews.viewmodel;
+package com.hittareviews.adapter;
 
 
 import android.support.annotation.NonNull;

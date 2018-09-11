@@ -17,7 +17,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.hittareviews.R;
-import com.hittareviews.viewmodel.ReviewsAdapter;
+import com.hittareviews.adapter.ReviewsAdapter;
 import com.hittareviews.viewmodel.ReviewsViewModel;
 
 import butterknife.BindView;
