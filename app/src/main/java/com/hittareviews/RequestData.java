@@ -2,14 +2,11 @@ package com.hittareviews;
 
 import android.content.Context;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
@@ -68,43 +65,36 @@ public class RequestData {
         requestQueue.add(jsonObjectRequest);
     }
 
+    public void sendReviewRequest(String userName, String comment, int rating, final Response.Listener<String> onSuccess, final Response.ErrorListener onError) {
 
-    public void saveReview(String userName, String comment, float rating, final Response.Listener<String> onSuccess, final Response.ErrorListener onError) {
+        try {
+            JSONObject jsonBody = new JSONObject();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, SAVE_REVIEW_URL,
-                response -> onSuccess.onResponse(response),
-                error -> {
-                    VolleyLog.d("volley", "Error: " + error.getMessage());
-                    error.printStackTrace();
-                    onError.onErrorResponse(error);
-                }) {
+            jsonBody.put("userName", userName);
+            jsonBody.put("comment", comment);
+            jsonBody.put("companyId", "ctyfiintu");
+            jsonBody.put("score", rating);
 
-            @Override
-            public String getBodyContentType() {
-                return "application/x-www-form-urlencoded; charset=UTF-8";
-            }
+            CustomJsonObjectRequest jsonOblect = new CustomJsonObjectRequest(Request.Method.POST, SAVE_REVIEW_URL, jsonBody,
+                    response -> onSuccess.onResponse(response != null ? response.toString() : ""),
+                    error -> {
+                        VolleyLog.d("volley", "Error: " + error.getMessage());
+                        error.printStackTrace();
+                        onError.onErrorResponse(error);
+                    }) {
+                @Override
+                public Map<String, String> getHeaders() {
+                    final Map<String, String> headers = new HashMap<>();
+                    headers.put("X-HITTA-DEVICE-NAME", "MOBILE_WEB");
+                    headers.put("X-HITTA-SHARED-IDENTIFIER", "15188693697264027");
+                    return headers;
+                }
+            };
+            requestQueue.add(jsonOblect);
 
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap<String, String> headers = new HashMap<>();
-                headers.put("X-HITTA-DEVICE-NAME", "MOBILE_WEB");
-                headers.put("X-HITTA-SHARED-IDENTIFIER", "15188693697264027");
-                return headers;
-            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
-                params.put("userName", userName);
-                params.put("comment", comment);
-                params.put("companyId", "ctyfiintu");
-                params.put("score", String.valueOf(rating));
-                return params;
-            }
-        };
-
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(8000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        // Adding request to request queue
-        requestQueue.add(stringRequest);
     }
 }

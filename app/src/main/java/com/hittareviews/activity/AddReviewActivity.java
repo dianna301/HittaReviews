@@ -114,7 +114,7 @@ public class AddReviewActivity extends AppCompatActivity {
     }
 
     private void saveReview() {
-        RequestData.getInstance(AddReviewActivity.this).saveReview(nameEditText.getText().toString().trim(), reviewEditText.getText().toString(), ratingBar.getRating(),
+        RequestData.getInstance(AddReviewActivity.this).sendReviewRequest(nameEditText.getText().toString().trim(), reviewEditText.getText().toString(), (int) ratingBar.getRating(),
                 response -> showSaveDialog(),
                 error -> showErrorDialog());
     }
